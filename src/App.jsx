@@ -1,20 +1,25 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import Home from './Pages/Home'
+import MentorProfile from './Pages/mentorProfile'
+import SignUp from './Pages/Signup'
+import Login from './Pages/Login'
+ 
+ 
 
 const App = () => {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/interview" element={<h1>Interview Prep</h1>} />
-        <Route path="/resumetemplete" element={<h1>Resume Template</h1>} />
-        <Route path="/ourteam" element={<h1>Our Team</h1>} />
-        <Route path="/createresume" element={<h1>Create Resume</h1>} />
-        <Route path="/loggedin" element={<h1>Logged In</h1>} />
-        <Route path="/signup" element={<h1>Sign Up</h1>} /> */}
-      </Routes>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/mentorprofile/:mentorId" element={<MentorProfile />} />
+          {/* <Route path="/messege/:receiverId" element={<Messege />} /> */}
+           <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
 
