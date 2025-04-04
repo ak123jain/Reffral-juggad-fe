@@ -12,7 +12,15 @@ const GetMentor = () => {
         const fetchMentors = async () => {
             setLoading(true);
             try {
-                const response = await axios.get('http://localhost:8000/mentor/getmentor'); // Adjust API endpoint as needed
+
+                const token = localStorage.getItem('accessToken');
+
+ 
+                const response = await axios.get('http://localhost:8000/mentor/getmentor' , {
+                     headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }); // Adjust API endpoint as needed
                 console.log(response.data.data.mentors);
                 setData(response.data.data.mentors);
             } catch (error) {

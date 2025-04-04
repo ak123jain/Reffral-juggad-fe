@@ -1,5 +1,6 @@
 import React from "react";
 import { Spotlight } from "./Spotlight.jsx";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -17,12 +18,16 @@ const Hero = () => {
 
       {/* ✅ Buttons in a Row */}
       <div className="flex flex-row gap-6 mt-6 z-10">
-        <button className="px-6 py-3 bg-blue-900 text-white font-bold text-lg rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-700 active:scale-95 transition">
+         <Link to='/recuiter' >
+         <button className="px-6 py-3 bg-blue-900 text-white font-bold text-lg rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-700 active:scale-95 transition">
           Get JOB Referrals
         </button>
-        <button className="px-6 py-3 bg-blue-900 text-white font-bold text-lg rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-700 active:scale-95 transition">
+         </Link>
+         <Link to='/addmentor' >
+         <button className="px-6 py-3 bg-blue-900 text-white font-bold text-lg rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-700 active:scale-95 transition">
           For Experts
         </button>
+         </Link>
       </div>
     </section>
   );

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const MentorProfile = () => {
     const { mentorId } = useParams();
@@ -100,10 +101,21 @@ const MentorProfile = () => {
                                     </span>
                                 </div>
 
-                                <div className="mt-8">
-                                    <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300 shadow-md">
+                                <div className="mt-8 flex gap-4">
+                                     <Link to={`/messege/${mentor._id}`}>
+                                     <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300 shadow-md">
                                         Contact Mentor
                                     </button>
+                                     </Link>
+
+                                      <Link to={`/premium/${mentor._id}`} > 
+                                      <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-lg transition duration-300 shadow-md">
+                                            🔥 Premium
+                                        </button>
+                                      </Link>
+
+
+
                                 </div>
                             </div>
                         </div>
