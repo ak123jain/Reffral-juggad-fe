@@ -16,7 +16,7 @@ const GetMentor = () => {
                 const token = localStorage.getItem('accessToken');
 
  
-                const response = await axios.get('http://localhost:8000/mentor/getmentor' , {
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/mentor/getmentor` , {
                      headers: {
                         Authorization: `Bearer ${token}`,
                     },

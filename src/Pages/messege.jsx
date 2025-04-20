@@ -106,7 +106,7 @@ const Message = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8000/messege/${id}/sendmessege`,
+        `${import.meta.env.VITE_API_URL}/messege/${id}/sendmessege`,
         { content: messageToSend },
         { headers: { Authorization: `Bearer ${token}` } }
       );

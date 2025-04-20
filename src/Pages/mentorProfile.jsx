@@ -15,7 +15,7 @@ const MentorProfile = () => {
         const fetchMentors = async () => {
             setLoading(true);
             try {
-                const response = await axios.get(`http://localhost:8000/mentor/getmentor/${mentorId}`);
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/mentor/getmentor/${mentorId}`);
                 setData(response.data.data.mentor);
             } catch (error) {
                 console.error("Error fetching mentor:", error);

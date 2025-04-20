@@ -44,7 +44,7 @@ const SignUp = () => {
     try {
       const token = localStorage.getItem("accessToken"); 
       const response = await axios.post(
-        "http://localhost:8000/user/register",
+        `${import.meta.env.VITE_API_URL}/user/register`,
         formData,
         { 
           headers: { 

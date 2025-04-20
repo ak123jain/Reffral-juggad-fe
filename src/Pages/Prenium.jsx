@@ -182,7 +182,7 @@ const Premium = () => {
 
           try {
             await axios.post(
-              'http://localhost:8000/payment/verify',
+              `${import.meta.env.VITE_API_URL}/payment/verify`,
               {
                 razorpay_payment_id: response.razorpay_payment_id,
                 razorpay_order_id: response.razorpay_order_id,
@@ -249,7 +249,7 @@ const Premium = () => {
       ) : (
         <div className="bg-white p-6 rounded-lg shadow-lg">
           <h1 className="text-2xl font-bold mb-4">Payment Page</h1>
-          <p>Your payment is being processed.</p>
+          <p>Your payment  is being processed.</p>
         </div>
       )}
     </div>

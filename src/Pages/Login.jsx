@@ -23,7 +23,7 @@ const Login = () => {
     fromdata.append("password", password);
 
     try {
-      const response = await axios.post(`http://localhost:8000/user/loggedinuser`, fromdata, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/user/loggedinuser`, fromdata, {
         headers: {
           'Content-Type': 'application/json',
         },

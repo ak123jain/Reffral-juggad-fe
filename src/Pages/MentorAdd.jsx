@@ -217,7 +217,7 @@ const MentorAdd = () => {
       formDataObj.append("avatar", avatar);
 
       const response = await axios.post(
-        "http://localhost:8000/mentor/addmentor",
+        `${import.meta.env.VITE_API_URL}/mentor/addmentor`,
         formDataObj,
         {
           headers: { "Content-Type": "multipart/form-data" },
